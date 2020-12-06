@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.herboshadhi.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_contentFragment"
+            app:destination="@id/contentFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/contentFragment"
+        android:name="com.example.herboshadhi.ContentFragment"
+        android:label="ContentFragment" >
+        <argument
+            android:name="passtitle"
+            app:argType="string" />
+        <argument
+            android:name="passcontent"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.herboshadhi.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.herboshadhi.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" />
+    <action
+        android:id="@+id/action_titleFragment_to_contentFragment"
+        app:destination="@+id/contentFragment"/>
+    <action
+        android:id="@+id/action_ayurvedSidhantFragment_to_contentFragment"
+        app:destination="@+id/contentFragment"/>
+    <fragment
+        android:id="@+id/ayurvedSidhantFragment"
+        android:name="com.example.herboshadhi.AyurvedSidhantFragment"
+        android:label="fragment_ayurved_sidhant"
+        tools:layout="@layout/fragment_ayurved_sidhant" >
+        <action
+            android:id="@+id/action_ayurvedSidhantFragment_to_contentFragment"
+            app:destination="@id/contentFragment"
+            app:popUpTo="@id/ayurvedSidhantFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
