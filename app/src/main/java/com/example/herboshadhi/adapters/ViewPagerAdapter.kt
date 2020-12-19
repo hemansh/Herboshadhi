@@ -1,4 +1,4 @@
-package com.example.herboshadhi
+package com.example.herboshadhi.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
